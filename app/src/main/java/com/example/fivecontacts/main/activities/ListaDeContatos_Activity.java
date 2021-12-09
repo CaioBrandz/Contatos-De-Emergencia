@@ -3,8 +3,6 @@ package com.example.fivecontacts.main.activities;
 import androidx.annotation.NonNull;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
@@ -13,20 +11,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.Layout;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.fivecontacts.R;
@@ -36,9 +29,10 @@ import com.example.fivecontacts.main.utils.UIEducacionalPermissao;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
-import java.io.UnsupportedEncodingException;
+import java.io.ObjectOutputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -72,7 +66,7 @@ public class ListaDeContatos_Activity extends AppCompatActivity implements UIEdu
                 user = (User) params.getSerializable("usuario");
                 if (user != null) {
                     setTitle("Contatos de Emergência de "+user.getNome());
-                  //  preencherListView(user); //Montagem do ListView
+                    //preencherListView(user); //Montagem do ListView
                     preencherListViewImagens(user);
                   //  if (user.isTema_escuro()){
                     //    ((ConstraintLayout) (lv.getParent())).setBackgroundColor(Color.BLACK);
@@ -116,7 +110,7 @@ public class ListaDeContatos_Activity extends AppCompatActivity implements UIEdu
         Log.v("PDM3","contatos:"+contatos.size());
         user.setContatos(contatos);
     }
-    protected  void preencherListViewImagens(User user){
+    protected  void preencherListViewImagens(final User user){
 
         final ArrayList<Contato> contatos = user.getContatos();
         Collections.sort(contatos);
@@ -138,7 +132,7 @@ public class ListaDeContatos_Activity extends AppCompatActivity implements UIEdu
                 listItemMap.put("abrevs",contatosAbrevs[i]);
                 itemDataList.add(listItemMap);
             }
-            SimpleAdapter simpleAdapter = new SimpleAdapter(this,itemDataList,R.layout.list_view_layout_imagem,
+            final SimpleAdapter simpleAdapter = new SimpleAdapter(this,itemDataList,R.layout.list_view_layout_imagem,
                     new String[]{"imageId","contato","abrevs"},new int[]{R.id.userImage, R.id.userTitle,R.id.userAbrev});
 
             lv.setAdapter(simpleAdapter);
@@ -162,11 +156,33 @@ public class ListaDeContatos_Activity extends AppCompatActivity implements UIEdu
                 }
             });
 
+            lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+
+                @Override
+                public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+                    SharedPreferences salvaContatos = getSharedPreferences("contatos",Activity.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = salvaContatos.edit();
+
+                    int num = salvaContatos.getInt("numContatos", 0);
+                    if (num > 0) {
+                        user.getContatos().subList(0, num).clear();
+                    }
+
+                    editor.clear().commit();
+                    //editor.remove("contato"+(num+1)).commit();
+                    Toast.makeText(getApplicationContext(),"Contatos apagados",Toast.LENGTH_LONG).show();
+                    lv.setAdapter(null);
+                    simpleAdapter.notifyDataSetChanged();
+
+                    return false;
+                }
+            });
+
         }
 
 
     }
-    protected void preencherListView(User user) {
+    protected void preencherListView(final User user) {
 
         final ArrayList<Contato> contatos = user.getContatos();
 
@@ -178,12 +194,11 @@ public class ListaDeContatos_Activity extends AppCompatActivity implements UIEdu
                 nomesSP[j] = contatos.get(j).getNome();
             }
 
-            ArrayAdapter<String> adaptador;
+            final ArrayAdapter<String> adaptador;
 
             adaptador = new ArrayAdapter<String>(this, R.layout.list_view_layout, nomesSP);
 
             lv.setAdapter(adaptador);
-
 
             lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
@@ -197,10 +212,27 @@ public class ListaDeContatos_Activity extends AppCompatActivity implements UIEdu
                         Intent itLigar = new Intent(Intent.ACTION_CALL, uri);
                         startActivity(itLigar);
                     }
-
-
                 }
             });
+
+
+            lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+
+                @Override
+                public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+                    SharedPreferences salvaContatos = getSharedPreferences("contatos",Activity.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = salvaContatos.edit();
+                    int num = salvaContatos.getInt("numContatos", 0);
+                    if (num > 0) {
+                        user.getContatos().subList(0, num).clear();
+                    }
+                    editor.clear().commit();
+                    lv.setAdapter(null);
+                    adaptador.notifyDataSetChanged();
+                    return false;
+                }
+            });
+
         }//fim do IF do tamanho de contatos
     }
 
