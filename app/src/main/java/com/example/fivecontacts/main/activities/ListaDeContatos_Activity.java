@@ -17,8 +17,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
@@ -45,7 +47,7 @@ public class ListaDeContatos_Activity extends AppCompatActivity implements UIEdu
     ListView lv;
     BottomNavigationView bnv;
     User user;
-
+    Button delete;
     String numeroCall;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +57,7 @@ public class ListaDeContatos_Activity extends AppCompatActivity implements UIEdu
         bnv = findViewById(R.id.bnv);
         bnv.setOnNavigationItemSelectedListener(this);
         bnv.setSelectedItemId(R.id.anvLigar);
-
+        delete = findViewById(R.id.btnDelete);
         lv = findViewById(R.id.listView1);
 
         //Dados da Intent Anterior
@@ -156,9 +158,9 @@ public class ListaDeContatos_Activity extends AppCompatActivity implements UIEdu
 
                 }
             });
-
+            /*
+            // On long para remover os itens um por um
             lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-
                 @Override
                 public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
                     SharedPreferences salvaContatos = getSharedPreferences("contatos",Activity.MODE_PRIVATE);
@@ -175,6 +177,23 @@ public class ListaDeContatos_Activity extends AppCompatActivity implements UIEdu
                     simpleAdapter.notifyDataSetChanged();
 
                     return false;
+                }
+            });
+            */
+            delete.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    SharedPreferences salvaContatos = getSharedPreferences("contatos",Activity.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = salvaContatos.edit();
+
+                    int num = salvaContatos.getInt("numContatos", 0);
+                    if (num > 0) {
+                        user.getContatos().subList(0, num).clear();
+                    }
+                    editor.clear().commit();
+                    Toast.makeText(getApplicationContext(),"Contatos apagados",Toast.LENGTH_LONG).show();
+                    lv.setAdapter(null);
+                    simpleAdapter.notifyDataSetChanged();
                 }
             });
 

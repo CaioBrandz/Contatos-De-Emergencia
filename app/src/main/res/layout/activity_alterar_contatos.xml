@@ -23,7 +23,7 @@
             android:id="@+id/buscarImg"
             android:layout_width="48dp"
             android:layout_height="match_parent"
-            app:srcCompat="@drawable/ic_action_buscar"></ImageView>
+            app:srcCompat="@drawable/ic_action_buscar" />
 
         <EditText
             android:id="@+id/edtBusca"

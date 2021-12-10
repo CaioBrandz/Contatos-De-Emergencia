@@ -3,11 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Caio/AndroidStudioProjects/CincoContatos/app/src/main/res/drawable/ic_launcher_background.xml" value="0.4036458333333333" />
         <entry key="..\:/Users/Caio/AndroidStudioProjects/CincoContatos/app/src/main/res/layout/activity_alterar_contatos.xml" value="0.2703804347826087" />
         <entry key="..\:/Users/Caio/AndroidStudioProjects/CincoContatos/app/src/main/res/layout/activity_checagem_login.xml" value="0.2703804347826087" />
         <entry key="..\:/Users/Caio/AndroidStudioProjects/CincoContatos/app/src/main/res/layout/activity_lista_de_contatos.xml" value="0.2703804347826087" />
         <entry key="..\:/Users/Caio/AndroidStudioProjects/CincoContatos/app/src/main/res/layout/activity_novo_usuario.xml" value="0.2703804347826087" />
         <entry key="..\:/Users/Caio/AndroidStudioProjects/CincoContatos/app/src/main/res/layout/activity_perfil_usuario.xml" value="0.2703804347826087" />
+        <entry key="..\:/Users/Caio/AndroidStudioProjects/CincoContatos/app/src/main/res/layout/list_view_layout.xml" value="0.37907608695652173" />
+        <entry key="..\:/Users/Caio/AndroidStudioProjects/CincoContatos/app/src/main/res/menu/activity_main_bottom_actions.xml" value="0.3875" />
         <entry key="..\:/Users/Caio/AndroidStudioProjects/FiveContactsvCF/app/src/main/res/layout/activity_alterar_contatos.xml" value="0.2703804347826087" />
         <entry key="..\:/Users/Caio/AndroidStudioProjects/FiveContactsvCF/app/src/main/res/layout/activity_checagem_login.xml" value="0.2703804347826087" />
         <entry key="..\:/Users/Caio/AndroidStudioProjects/FiveContactsvCF/app/src/main/res/layout/activity_lista_de_contatos.xml" value="0.2703804347826087" />
