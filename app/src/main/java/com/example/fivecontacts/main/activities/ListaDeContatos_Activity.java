@@ -3,6 +3,7 @@ package com.example.fivecontacts.main.activities;
 import androidx.annotation.NonNull;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
@@ -167,7 +168,6 @@ public class ListaDeContatos_Activity extends AppCompatActivity implements UIEdu
                     if (num > 0) {
                         user.getContatos().subList(0, num).clear();
                     }
-
                     editor.clear().commit();
                     //editor.remove("contato"+(num+1)).commit();
                     Toast.makeText(getApplicationContext(),"Contatos apagados",Toast.LENGTH_LONG).show();

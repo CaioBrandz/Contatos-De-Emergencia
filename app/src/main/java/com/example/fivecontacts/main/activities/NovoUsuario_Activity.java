@@ -1,6 +1,7 @@
 package com.example.fivecontacts.main.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -11,6 +12,7 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Switch;
 
@@ -32,7 +34,6 @@ public class NovoUsuario_Activity extends AppCompatActivity {
     Switch swTema;
     Button btCriar;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,67 +46,8 @@ public class NovoUsuario_Activity extends AppCompatActivity {
         edEmail=findViewById(R.id.edEmail);
         swLogado=findViewById(R.id.swLogado);
 
-        swTema= findViewById(R.id.swTema);
-
+        swTema = findViewById(R.id.swTema);
         setTitle("Novo Usuário");
-
-
-        //Evento de limpar Componente
-        edUser.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                if (primeiraVezUser){
-                    primeiraVezUser=false;
-                    edUser.setText("");
-                }
-
-                return false;
-            }
-        });
-        //Evento de limpar Componente
-
-        edPass.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                if (primeiraVezSenha){
-                    primeiraVezSenha=false;
-                    edPass.setText("");
-                    edPass.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD
-                    );
-                }
-                return false;
-            }
-        });
-
-        //Evento de limpar Componente - E-mail
-
-        edEmail.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                if (primeiraVezEmail){
-                    primeiraVezEmail=false;
-                    edEmail.setText("");
-                }
-
-                return false;
-            }
-        });
-
-        //Evento de limpar Componente - Nome
-
-        edNome.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                if (primeiraVezNome){
-                    primeiraVezNome=false;
-                    edNome.setText("");
-                }
-
-                return false;
-            }
-        });
-
-
 
         btCriar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -123,7 +65,16 @@ public class NovoUsuario_Activity extends AppCompatActivity {
                 boolean manterLogado;
                 manterLogado= swLogado.isChecked();
 
+
                 boolean temaEscuro=swTema.isChecked();
+
+                if(temaEscuro){
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                    setTheme(R.style.AppDarkTheme);
+                }else{
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                    setTheme(R.style.AppLighTheme);
+                }
 
                 SharedPreferences salvaUser= getSharedPreferences("usuarioPadrao", Activity.MODE_PRIVATE);
                 SharedPreferences.Editor escritor= salvaUser.edit();

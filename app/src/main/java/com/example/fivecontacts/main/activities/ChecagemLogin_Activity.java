@@ -79,32 +79,6 @@ public class ChecagemLogin_Activity extends AppCompatActivity {
             mTextView = findViewById(R.id.tvEsqueceuSenha);
             mTextView.setPaintFlags(mTextView.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
 
-            //Evento de limpar Componente
-            edUser.setOnTouchListener(new View.OnTouchListener() {
-                @Override
-                public boolean onTouch(View view, MotionEvent motionEvent) {
-                    if (primeiraVezUser) {
-                        edUser.setText("");
-                        primeiraVezUser = false;
-                    }
-                    return false;
-                }
-            });
-
-            //Evento de limpar Componente
-            edPass.setOnTouchListener(new View.OnTouchListener() {
-                @Override
-                public boolean onTouch(View view, MotionEvent motionEvent) {
-                    if (primeiraVezSenha) {
-                        primeiraVezSenha = false;
-                        edPass.setText("");
-                        edPass.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD
-                        );
-                    }
-                    return false;
-                }
-            });
-
             btLogar.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

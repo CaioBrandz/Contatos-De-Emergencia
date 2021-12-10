@@ -3,4 +3,16 @@
     <color name="colorPrimary">#FF3122</color>
     <color name="colorPrimaryDark">#FF5722</color>
     <color name="colorAccent">#FF9800</color>
+    <color name="blue_strong">#1060AB</color>
+    <color name="blue">#51A4F1</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <declare-styleable name="dt">
+        <attr name="bg" format="color"/>
+        <attr name="textTitle" format="color"/>
+        <attr name="text" format="color"/>
+        <attr name="textHint" format="color"/>
+        <attr name="textLine" format="color"/>
+    </declare-styleable>
 </resources>

@@ -2,6 +2,7 @@ package com.example.fivecontacts.main.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
@@ -21,6 +22,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.fivecontacts.R;
 import com.example.fivecontacts.main.model.Contato;
@@ -59,18 +61,7 @@ public class AlterarContatos_Activity extends AppCompatActivity implements Botto
             }
         }
         lv = findViewById(R.id.listContatosDoCell);
-        //Evento de limpar Componente
-        edtNome.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                if (primeiraVezUser){
-                    primeiraVezUser=false;
-                    edtNome.setText("");
-                }
 
-                return false;
-            }
-        });
     }
 
     public void salvarContato (Contato w){
