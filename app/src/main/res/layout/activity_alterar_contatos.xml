@@ -10,11 +10,11 @@
         android:id="@+id/layoutH"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:layout_marginBottom="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:background="#88FCD3C6"
+        android:background="#1e3799C6"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -39,13 +39,12 @@
             android:id="@+id/button"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:background="#FF5722"
-            android:textSize="18dp"
-            android:textStyle="bold"
+            android:background="#1e3799"
             android:onClick="onClickBuscar"
             android:text="Buscar"
             android:textColor="#FFFFFF"
-            />
+            android:textSize="18dp"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -60,8 +59,9 @@
         android:id="@+id/imageView2"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="52dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/layoutH"
         app:srcCompat="@drawable/ic_action_mudarv2" />
@@ -73,8 +73,8 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
-        android:background="#88FEE9E3"
-        android:divider="#FF5722"
+        android:background="#0c2461E3"
+        android:divider="#0c2461"
         android:dividerHeight="1dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

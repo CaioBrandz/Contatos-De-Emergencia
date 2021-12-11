@@ -16,6 +16,25 @@
         <entry key="..\:/Users/Caio/AndroidStudioProjects/FiveContactsvCF/app/src/main/res/layout/activity_lista_de_contatos.xml" value="0.2703804347826087" />
         <entry key="..\:/Users/Caio/AndroidStudioProjects/FiveContactsvCF/app/src/main/res/layout/list_view_layout.xml" value="0.2703804347826087" />
         <entry key="..\:/Users/Caio/AndroidStudioProjects/FiveContactsvCF/app/src/main/res/layout/list_view_layout_imagem.xml" value="0.2703804347826087" />
+        <entry key="..\:/Users/Martins/AndroidStudioProjects/Contatos/Contatos-De-Emergencia/app/src/main/res/drawable-anydpi/ic_action_buscar.xml" value="0.20555555555555555" />
+        <entry key="..\:/Users/Martins/AndroidStudioProjects/Contatos/Contatos-De-Emergencia/app/src/main/res/drawable-anydpi/ic_action_ligar.xml" value="0.20555555555555555" />
+        <entry key="..\:/Users/Martins/AndroidStudioProjects/Contatos/Contatos-De-Emergencia/app/src/main/res/drawable-anydpi/ic_action_ligar_list.xml" value="0.20555555555555555" />
+        <entry key="..\:/Users/Martins/AndroidStudioProjects/Contatos/Contatos-De-Emergencia/app/src/main/res/drawable-anydpi/ic_action_mudar.xml" value="0.20555555555555555" />
+        <entry key="..\:/Users/Martins/AndroidStudioProjects/Contatos/Contatos-De-Emergencia/app/src/main/res/drawable-anydpi/ic_action_mudarcontatos.xml" value="0.20555555555555555" />
+        <entry key="..\:/Users/Martins/AndroidStudioProjects/Contatos/Contatos-De-Emergencia/app/src/main/res/drawable-anydpi/ic_action_mudarv.xml" value="0.20555555555555555" />
+        <entry key="..\:/Users/Martins/AndroidStudioProjects/Contatos/Contatos-De-Emergencia/app/src/main/res/drawable-anydpi/ic_action_mudarv2.xml" value="0.20555555555555555" />
+        <entry key="..\:/Users/Martins/AndroidStudioProjects/Contatos/Contatos-De-Emergencia/app/src/main/res/drawable-anydpi/ic_action_name.xml" value="0.20555555555555555" />
+        <entry key="..\:/Users/Martins/AndroidStudioProjects/Contatos/Contatos-De-Emergencia/app/src/main/res/drawable-anydpi/ic_action_perfil.xml" value="0.20555555555555555" />
+        <entry key="..\:/Users/Martins/AndroidStudioProjects/Contatos/Contatos-De-Emergencia/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.20555555555555555" />
+        <entry key="..\:/Users/Martins/AndroidStudioProjects/Contatos/Contatos-De-Emergencia/app/src/main/res/drawable/ic_launcher_background.xml" value="0.20555555555555555" />
+        <entry key="..\:/Users/Martins/AndroidStudioProjects/Contatos/Contatos-De-Emergencia/app/src/main/res/layout/activity_alterar_contatos.xml" value="0.33" />
+        <entry key="..\:/Users/Martins/AndroidStudioProjects/Contatos/Contatos-De-Emergencia/app/src/main/res/layout/activity_checagem_login.xml" value="0.5" />
+        <entry key="..\:/Users/Martins/AndroidStudioProjects/Contatos/Contatos-De-Emergencia/app/src/main/res/layout/activity_lista_de_contatos.xml" value="0.33" />
+        <entry key="..\:/Users/Martins/AndroidStudioProjects/Contatos/Contatos-De-Emergencia/app/src/main/res/layout/activity_novo_usuario.xml" value="0.33" />
+        <entry key="..\:/Users/Martins/AndroidStudioProjects/Contatos/Contatos-De-Emergencia/app/src/main/res/layout/activity_perfil_usuario.xml" value="0.33" />
+        <entry key="..\:/Users/Martins/AndroidStudioProjects/Contatos/Contatos-De-Emergencia/app/src/main/res/layout/list_view_layout.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/Martins/AndroidStudioProjects/Contatos/Contatos-De-Emergencia/app/src/main/res/layout/list_view_layout_imagem.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/Martins/AndroidStudioProjects/Contatos/Contatos-De-Emergencia/app/src/main/res/menu/activity_main_bottom_actions.xml" value="0.22447916666666667" />
       </map>
     </option>
   </component>
